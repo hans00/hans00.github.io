@@ -1,0 +1,479 @@
+html, body, div {
+	margin: 0;
+	padding: 0;
+	font-size: 15px;
+	font-family: sans-serif;
+}
+
+* {
+	line-height: 1;
+	font-weight: 200;
+}
+
+h1 {
+	font-size: 2.2em;
+	font-weight: 700;
+	margin: 0;
+}
+
+h2 {
+	font-size: 1.8em;
+	font-weight: 500;
+	margin: 0;
+}
+
+h3 {
+	font-size: 1.6em;
+	font-weight: 300;
+	margin: 0;
+}
+
+body section {
+	display: block;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	margin: 0;
+}
+
+#projects {
+	background: gray url(projects-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#skills {
+	background: gray url(skills-bg.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#history {
+	text-align: center;
+}
+
+#self > * {
+	height: 100%;
+	width: 50vw;
+	padding: 0;
+}
+
+#self > .left {
+	background: white;
+}
+
+#self > .right {
+	overflow: hidden;
+	vertical-align: middle;
+	text-align: right;
+	float: right;
+}
+
+#self > .right > img {
+	margin: auto;
+	max-height: 100%;
+	min-width: 100%;
+	float: right;
+}
+
+#self .self {
+	margin: 50vh 0 0 0;
+	transform: translate(0, -50%);
+	padding: 2em;
+	text-align: right;
+	font-size: 25px;
+	line-height: 1;
+}
+
+.middle {
+	margin-top: 50vh;
+	transform: translate(0, -50%);
+	background: rgba(255,255,255,.9);
+	padding: 2em;
+	/*max-height: 100vh;*/
+	/*overflow-y: auto;*/
+}
+
+.skills, .projects {
+	margin: 1.5em 0;
+	text-align: center;
+}
+
+.skill, .project {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+}
+
+.skill img, .project img {
+	border-radius: 100%;
+	padding: 10px;
+	background: white;
+	border: 5px solid gray;
+	display: block;
+	margin: 1em;
+	width: 10em;
+	height: 10em;
+}
+
+.menu {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	z-index: 99;
+	width: auto;
+	/*overflow: hidden;*/
+}
+
+.menu > a,
+.menu > span {
+	box-shadow: 0 0 8px black;
+}
+
+.menu > a {
+	transition: margin .5s, opacity .3s, transform .2s;
+	font-size: 0;
+	border-radius: 100%;
+	padding: 10px;
+	background: white;
+	border: 8px solid #DDD;
+	display: block;
+	width: 50px;
+	height: 50px;
+	font-weight: 900;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
+	text-decoration: none;
+	opacity: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.menu > a:first-letter {
+	font-size: 50px;
+}
+
+.menu > span.hover > span {
+	display: block;
+	margin-left: 17.5%;
+	width: 65%;
+	height: 3px;
+	background: black;
+	margin-top: 25%;
+}
+
+.menu > span.hover > span + span {
+	margin-top: 15%;
+}
+
+.menu > span.hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: scale(1, 1);
+	transition: opacity .2s, transform .2s;
+	border-radius: 100%;
+	padding: 10px;
+	background: white;
+	border: 8px solid #DDD;
+	width: 50px;
+	height: 50px;
+	opacity: 1;
+}
+
+.menu:hover > span {
+	transform: scale(0, 0);
+	opacity: 0;
+	width: 0;
+	height: 0;
+	top: -200%;
+}
+
+.menu > a + a {
+	margin: -100% 0 0 0;
+}
+
+.menu:hover > a {
+	opacity: .79;
+}
+
+.menu:hover > a + a {
+	margin: 15px 0 0 0;
+}
+
+.menu > a:hover {
+	opacity: 1;
+	transform: scale(1.15,1.15);
+	font-size: 130%;
+}
+
+.menu > a:hover:first-letter {
+	font-size: 100%;
+}
+
+.menu .self {
+	color: #FFF;
+	background: #89F118;
+}
+
+.menu .projects {
+	color: #FFF;
+	background: #1541F4;
+}
+
+.menu .projects:hover {
+	font-size: 85%;
+}
+
+.menu .skills {
+	color: #FFF;
+	background: #A443FC;
+}
+
+.menu .history {
+	color: #FFF;
+	background: #3BAEFB;
+}
+
+.menu .history:hover {
+	font-size: 98%;
+}
+
+section.long {
+	height: auto;
+	min-height: 100vh;
+}
+
+section.long > *:first-child {
+	margin-top: 2em;
+}
+
+section.long > *:last-child {
+	margin-bottom: 2em;
+}
+
+.timeline {
+	font-size: 25px;
+	list-style: none;
+	text-align: center;
+	margin: 2em auto;
+	line-height: 1;
+	padding: 0;
+	width: 70%;
+}
+
+.timeline:before {
+	content: "";
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	background-color: #000;
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.timeline li {
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	position: relative;
+}
+
+.timeline li:before {
+	content: "";
+	height: 2em;
+	width: 1.5px;
+	display: block;
+	background: #000;
+	margin-top: -4px;
+	margin-bottom: -4px;
+	margin-left: 50%;
+	transform: translate(-50%);
+}
+
+.timeline li:last-child:after {
+	content: "";
+	display: block;
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 15px solid #000;
+}
+
+.timeline li span {
+	display: inline-block;
+	width: 48%;
+	vertical-align: middle;
+	text-align: right;
+	margin: 0 1% 0 0.5%;
+	word-wrap: break-word;
+}
+
+.timeline li .event + .time {
+	text-align: left;
+	margin: 0;
+}
+
+.timeline li .time + .event {
+	text-align: left;
+	margin: 0;
+}
+
+.timeline li .event:before {
+	content: "";
+	height: 100%;
+	width: 1.5px;
+	display: inline-block;
+	background: #000;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.timeline li .time:before {
+	content: "";
+	height: 8px;
+	width:  8px;
+	display: inline-block;
+	border-radius: 100%;
+	background: #000;
+	position: absolute;
+	left: 50%;
+	margin-top: 0.5em;
+	transform: translate(-50%, -50%);
+}
+
+.project:hover img {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+section .middle {
+	max-height: 85%;
+	overflow-y: auto;
+}
+
+@media screen and (max-width:960px) {
+	#self > * {
+		height: 50vh;
+		width: 100%;
+	}
+	#self > .right > img {
+		min-width: 100%;
+		max-height: 100%;
+	}
+	#self > .right {
+		width: 100%;
+	}
+	#self > .left {
+		width: 100%;
+		margin-top: 50vh;
+	}
+	#self .self {
+		margin: auto;
+		transform: none;
+		padding: 0.5em;
+		text-align: center;
+	}
+	.menu > a + a {
+		margin: 10px 0 0 0 !important;
+	}
+	.menu > a {
+		opacity: .85;
+		width: 35px;
+		height: 35px;
+		line-height: 30px;
+		border: 6px solid #ddd;
+		line-height: 35px;
+	}
+	.menu > a:first-letter {
+		font-size: 35px;
+	}
+	.menu > a:hover {
+		font-size: 95%;
+	}
+	.menu .projects:hover {
+		font-size: 62%;
+	}
+	.menu .history:hover {
+		font-size: 75%;
+	}
+	.menu > span.hover {
+		display: none;
+	}
+	.skill img, .project img {
+		width: 7.5em;
+		height: 7.5em;
+	}
+	.timeline {
+		width: 100%;
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width:560px) {
+	.menu {
+		display: none;
+	}
+	.skill img, .project img {
+		width: 5em;
+		height: 5em;
+		margin: 2px;
+	}
+	.timeline {
+		font-size: 14px;
+	}
+	.timeline li .time:before {
+		height: 5px;
+		width:  5px;
+	}
+}
+
+@media screen and (max-width:320px) {
+	h1 {
+		font-size: 1.5em;
+	}
+	.skill img, .project img {
+		width: 4em;
+		height: 4em;
+		padding: 5px;
+		border: 2px solid gray;
+		margin: 2px;
+	}
+	.timeline {
+		font-size: 12px;
+	}
+	.timeline li .time:before {
+		height: 4px;
+		width:  4px;
+	}
+	.timeline li:before {
+		width: 1px;
+	}
+	.timeline li .event:before {
+		width: 1px;
+	}
+	.timeline:before {
+		width: 6px;
+		height: 6px;
+	}
+	.timeline li:last-child:after {
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 6.5px solid #000;
+	}
+}
