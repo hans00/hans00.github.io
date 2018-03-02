@@ -1,8 +1,13 @@
 {
 	"self": {
-		"title": "Hello!!",
+		"title": "Hello World!!",
 		"content": "I'm hans.",
-		"image": "danboard.jpg"
+		"contact": {
+			"github": "https://github.com/hans00/",
+			"facebook": "https://fb.me/hansx.tw",
+			"kaggle": "https://www.kaggle.com/hans00"
+		},
+		"image": "images/danboard.jpg"
 	},
 	"skills": [
 		{
@@ -71,12 +76,12 @@
 		},
 		{
 			"time": " ",
-			"content": "Work for RemoteSpark.",
+			"content": "Work for RemoteSpark Inc.",
 			"position": "R"
 		},
 		{
 			"time": "2016",
-			"content": "Won the self-propelled car contest.",
+			"content": "Won the self-drive car contest.",
 			"position": "L"
 		},
 		{

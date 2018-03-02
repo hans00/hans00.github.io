@@ -36,8 +36,62 @@ body section {
 	margin: 0;
 }
 
+.fa-kaggle::before {
+	font-family: roboto;
+	font-style: normal;
+	font-weight: 300;
+	content: "k";
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1;
+	width: 1.1em;
+	text-align: center;
+	position: relative;
+	top: 2px;
+}
+
+.btn {
+	text-decoration: none;
+	font-size: 1.5em;
+	margin: 5px;
+}
+
+.btn-kaggle {
+	border-radius: 5px;
+	font-size: 1.3em;
+	position: relative;
+	top: -5px;
+	background: #429bf4;
+	color: #fff;
+}
+
+.btn-kaggle:hover {
+	background: #53acf5;
+	color: #fff;
+}
+
+.btn-github {
+	color: #373737;
+}
+
+.btn-github:hover {
+	color: #595959;
+}
+
+.btn-facebook {
+	color: #233393;
+}
+
+.btn-facebook:hover {
+	color: #3355A9;
+}
+
 #projects {
-	background: gray url(projects-bg.jpg) no-repeat center center fixed;
+	background: gray url(images/projects-bg.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -45,7 +99,7 @@ body section {
 }
 
 #skills {
-	background: gray url(skills-bg.jpg) no-repeat center center fixed;
+	background: gray url(images/skills-bg.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
