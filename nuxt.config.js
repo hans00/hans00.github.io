@@ -53,7 +53,7 @@ export default {
     // Google Fonts
     '@nuxtjs/google-fonts',
     // auto remove
-    'nuxt-purgecss',
+    // 'nuxt-purgecss',
     // FA icons
     '@nuxtjs/fontawesome',
   ],
