@@ -1,0 +1,358 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* component */
+
+.badge {
+  @apply py-px px-1 bg-gray-400 rounded border border-gray-600;
+}
+
+.badge.red {
+  @apply bg-red-400 border-red-600;
+}
+
+.badge.blue {
+  @apply bg-blue-400 border-blue-600;
+}
+
+.badge.green {
+  @apply bg-green-400 border-green-600;
+}
+
+.badge.yellow {
+  @apply bg-yellow-400 border-yellow-600;
+}
+
+.badge.orange {
+  @apply bg-orange-400 border-orange-600;
+}
+
+/* Go Top */
+
+.go-to-top {
+  @apply fixed bottom-0 right-0 block;
+  @apply rounded-full bg-gray-600 bg-opacity-75 text-white cursor-pointer;
+  @apply text-3xl w-12 h-12 p-3 leading-none align-middle text-center;
+  @apply invisible opacity-0;
+  transition: visibility .3s, opacity .3s, right .3s, bottom .5s;
+}
+
+.go-to-top.show {
+  @apply bottom-4 right-4 visible opacity-100;
+}
+
+/* NAV */
+
+.nav-item {
+  @apply w-auto block p-3 mx-0 text-gray-600 transition-colors duration-300;
+}
+
+.nav-item:hover {
+  @apply text-white bg-gray-700;
+}
+
+.nav-item.active {
+  @apply text-white bg-gray-600;
+}
+
+.navbar {
+  @apply w-full block flex flex-col justify-center text-center;
+  @apply border-solid border-t border-b border-gray-600;
+}
+
+@screen sm {
+  .navbar {
+    @apply flex-row;
+  }
+}
+
+/* LOGO */
+
+.logo {
+  font-family: 'Courgette', cursive;
+  font-size: 5rem;
+  line-height: 1;
+  color: #35495e;
+  transition: text-shadow .3s;
+  text-shadow: 0 0 transparent;
+}
+
+.logo:hover {
+  text-shadow: 2px 2px 2px #A9C0D6;
+}
+
+/* Article Content */
+
+.article .title {
+  @apply text-4xl text-gray-800;
+}
+.article .category {
+  @apply text-gray-600 ml-1 transition-colors duration-300;
+}
+
+.article .category:hover {
+  @apply text-gray-800;
+}
+.article .time {
+  @apply text-gray-600 ml-1;
+}
+.article .more {
+  @apply inline-block font-bold mt-1 py-1 px-2 rounded text-sm bg-gray-600 text-white;
+}
+
+.article .more:hover {
+  @apply bg-gray-800;
+}
+
+.article .content {
+  @apply py-1;
+}
+
+.article .content h1,
+.article .content h2,
+.article .content h3,
+.article .content h4,
+.article .content h5,
+.article .content h6 {
+  @apply text-gray-900 mt-3;
+}
+
+.article .content h1 {
+  @apply text-3xl border-b border-gray-500 mb-3;
+}
+
+.article .content h2 {
+  @apply text-2xl border-b border-gray-500 mb-3;
+}
+
+.article .content h3 {
+  @apply text-xl border-b border-gray-500 mb-3;
+}
+
+.article .content h4 {
+  @apply text-lg;
+}
+
+.article .content h5 {
+  @apply text-lg;
+}
+
+.article .content h6 {
+  @apply text-base;
+}
+
+.article .content a {
+  @apply text-gray-600;
+}
+
+.article .content table {
+  @apply table-auto w-full;
+}
+
+.article .content table th {
+  @apply text-gray-800 px-4 py-2;
+}
+
+.article .content table tr td {
+  @apply border px-4 py-2;
+}
+
+.article .content table tr:nth-child(2) {
+  @apply bg-gray-100;
+}
+
+.article .content ul {
+  @apply list-disc list-inside;
+}
+
+.article .content ul ul {
+  list-style-type: circle;
+}
+
+.article .content ul ul ul {
+  list-style-type: square;
+}
+
+.article .content ul ul ul ul {
+  list-style-type: disc;
+}
+
+.article .content ol {
+  @apply list-decimal list-inside;
+}
+
+li > ul,
+li > ol {
+  @apply pl-6;
+}
+
+.article .content ul.contains-task-list {
+  @apply list-none;
+}
+
+.article .content blockquote {
+  @apply border-l-4 border-blue-500 p-4;
+}
+
+.article .content p > code {
+  @apply border border-gray-600 bg-gray-400 px-1 py-px rounded;
+}
+
+.filename {
+  @apply block bg-gray-300 text-center py-1 rounded-t;
+}
+
+.filename + pre[class*="language-"] {
+  @apply mt-0 rounded-t-none;
+}
+
+pre[class*="language-"] {
+  @apply rounded-t rounded-b;
+}
+
+/* prism */
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  display: block;
+  left: -3.8em;
+  width: 3em;
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+  user-select: none;
+}
+
+.line-numbers .line-numbers-rows  > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers .line-numbers-rows  > span::before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+/* Tooltip */
+
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+}
+
+.tooltip .tooltip-inner {
+  background: black;
+  color: white;
+  border-radius: 16px;
+  padding: 5px 10px 4px;
+}
+
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px;
+  border-color: black;
+  z-index: 1;
+}
+
+.tooltip[x-placement^="top"] {
+  margin-bottom: 5px;
+}
+
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="bottom"] {
+  margin-top: 5px;
+}
+
+.tooltip[x-placement^="bottom"] .tooltip-arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tooltip[x-placement^="right"] {
+  margin-left: 5px;
+}
+
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip[x-placement^="left"] {
+  margin-right: 5px;
+}
+
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tooltip.popover .popover-inner {
+  background: #f9f9f9;
+  color: black;
+  padding: 24px;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(black, .1);
+}
+
+.tooltip.popover .popover-arrow {
+  border-color: #f9f9f9;
+}
+
+.tooltip[aria-hidden='true'] {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .15s, visibility .15s;
+}
+
+.tooltip[aria-hidden='false'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .15s;
+}
