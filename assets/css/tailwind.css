@@ -5,7 +5,7 @@
 /* component */
 
 .badge {
-  @apply py-px px-1 bg-gray-400 rounded border border-gray-600;
+  @apply inline-block py-px px-1 bg-gray-400 rounded border border-gray-600;
 }
 
 .badge.red {
