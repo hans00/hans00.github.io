@@ -52,20 +52,7 @@
             <span class="sr-only">PHP</span>
           </span>
           <span v-tooltip="'C++'" title="C++" class="mr-1">
-            <font-awesome-layers class="fa-4x" style="color: #02326F">
-              <font-awesome-icon
-                :icon="['fab', 'cuttlefish']"
-                transform="shrink-5 left-3"
-              />
-              <font-awesome-icon
-                :icon="['fal', 'plus']"
-                transform="shrink-12 right-3"
-              />
-              <font-awesome-icon
-                :icon="['fal', 'plus']"
-                transform="shrink-12 right-5"
-              />
-            </font-awesome-layers>
+            <cpp-icon class="inline align-top" style="height: 4em" />
             <span class="sr-only">C++</span>
           </span>
           <span v-tooltip="'Linux'" title="Linux" class="mr-1">
@@ -167,10 +154,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import Card from '@/components/Card.vue'
+import CppIcon from '@/components/Cpp-Icon.vue'
 
 export default Vue.extend({
   components: {
     Card,
+    CppIcon,
   },
   data() {
     return {
