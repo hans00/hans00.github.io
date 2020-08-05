@@ -32,8 +32,11 @@ export default Vue.extend({
       { hid: 'charset', charset: "utf-8" },
       { hid: 'viewport', name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "author", name: "author", content: "Hans" },
+      { hid: "description", name: "description", content: "Hans' homepage" },
       { hid: "og:title", property: "og:title", content: "Hans' homepage" },
       { hid: "og:site_name", property: "og:site_name", content: "Hans' homepage" },
+      { hid: "og:description", property: "og:description", content: "Hans' homepage" },
+      { hid: "og:image", property: "og:image", content: "https://secure.gravatar.com/avatar/193b9e6372680df1f91d0eb25be4c192" },
     ],
   },
   data() {

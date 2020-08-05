@@ -56,8 +56,14 @@ export default Vue.extend({
     }
   },
   head(): {[index: string]: any} {
+    const title = `Category: ${categoryMap[this.$route.params.category]} | Hans' Blog`
     return {
-      title: `Category: ${categoryMap[this.$route.params.category]} | Hans' Blog`,
+      title,
+      meta: [
+        { hid: "description", name: "description", content: "List of posts" },
+        { hid: "og:title", property: "og:title", content: title },
+        { hid: "og:description", property: "og:description", content: "List of posts" },
+      ],
     }
   },
 })

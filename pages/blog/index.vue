@@ -51,6 +51,11 @@ export default Vue.extend({
   },
   head: {
     title: "Hans' Blog",
+    meta: [
+      { hid: "description", name: "description", content: "List of posts" },
+      { hid: "og:title", property: "og:title", content: "Hans' Blog" },
+      { hid: "og:description", property: "og:description", content: "List of posts" },
+    ],
   },
 })
 </script>
