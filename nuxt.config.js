@@ -54,6 +54,8 @@ export default {
     '@nuxtjs/google-fonts',
     // FA icons
     '@nuxtjs/fontawesome',
+    // image optimize
+    '@aceforth/nuxt-optimized-images',
   ],
   /*
    ** Nuxt.js modules
@@ -130,5 +132,9 @@ export default {
         'faExternalLink',
       ]
     }
+  },
+
+  optimizedImages: {
+    optimizeImages: true
   }
 }
