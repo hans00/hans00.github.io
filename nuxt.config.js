@@ -52,8 +52,6 @@ export default {
     '@nuxtjs/tailwindcss',
     // Google Fonts
     '@nuxtjs/google-fonts',
-    // auto remove
-    // 'nuxt-purgecss',
     // FA icons
     '@nuxtjs/fontawesome',
   ],

@@ -2,7 +2,9 @@
   <div class="w-full md:flex">
     <section class="basic">
       <div class="info">
-        <img src="@/assets/photo.jpg" class="photo" alt="My Photo" />
+        <div class="photo">
+          <img src="@/assets/photo.jpg" alt="My Photo" />
+        </div>
         <h2 class="name">Hans</h2>
         <div class="social">
           <a
@@ -11,7 +13,7 @@
             href="https://github.com/hans00/" target="_blank"
             style="color: #24292e"
           >
-            <font-awesome-icon :icon="['fab', 'github']" />
+            <font-awesome-icon :icon="['fab', 'github']" size="lg" />
           </a>
           <a
             title="Facebook"
@@ -19,7 +21,7 @@
             href="https://fb.hans00.me" target="_blank"
             style="color: #3b5998"
           >
-            <font-awesome-icon :icon="['fab', 'facebook']" />
+            <font-awesome-icon :icon="['fab', 'facebook']" size="lg" />
           </a>
           <a
             title="Kaggle"
@@ -31,6 +33,7 @@
               :icon="['fab', 'kaggle']"
               :mask="['fas', 'circle']"
               transform="shrink-3.5"
+              size="lg"
             />
           </a>
         </div>
@@ -108,100 +111,53 @@
         </div>
       </section>
       <section>
-        <h3 class="title">Organization</h3>
+        <h3 class="title">Titles</h3>
         <div class="data">
-          <ul>
-            <li>社團法人臺灣校園資訊安全推廣暨駭客培育協會</li>
-          </ul>
+          <div v-for="title in about.titles">
+            {{ title }}
+          </div>
         </div>
       </section>
       <section id="experience">
         <h3 class="title">Experience</h3>
         <div class="data">
-          <ol>
-            <li>
-              Won the Taiwan local LEGO WRO contest.
-              <span class="badge">2013</span>
-            </li>
-            <li>
-              Manage shared hosting server.
-              <span class="badge">2014 ~ 2015</span>
-            </li>
-            <li>
-              Work for RemoteSpark Inc.
-              <span class="badge">2015</span>
-            </li>
-            <li>
-              Won the self-drive car contest. (Arduino)
-              <span class="badge">2016</span>
-            </li>
-            <li>
-              Work for Leukocyte Lab Co., Ltd.
-              <span class="badge">2018 ~ 2019</span>
-            </li>
-          </ol>
+          <table>
+            <tr v-for="experience in about.experiences">
+              <th class="text-right">{{ experience.year }}</th>
+              <td class="pl-2">{{ experience.content }}</td>
+            </tr>
+          </table>
         </div>
       </section>
       <section id="projects">
         <h3 class="title">Projects</h3>
         <div class="data">
-          <card>
-            <template #title>
-              <a href="https://github.com/hans00/MyLHU" target="_blank">
-                My LHU
-                <font-awesome-icon :icon="['fad', 'external-link']" class="text-gray-600 text-sm" />
-              </a>
-              <div class="inline-block ml-2">
-                <span class="badge orange font-normal text-sm">Not In Maintain</span>
-              </div>
-            </template>
-            <template #content>
-              <p>A tool for LHU students.</p>
-              <p>Using Node.js and Vue.js. And user data only in session.</p>
-            </template>
-          </card>
-          <card>
-            <template #title>
-              <a href="https://github.com/hans00/envoy-ModSecurity" target="_blank">
-                envoy ModSecurity
-                <font-awesome-icon :icon="['fad', 'external-link']" class="text-gray-600 text-sm" />
-              </a>
-            </template>
-            <template #content>
-              <p>ModSecurity filter for envoy proxy.</p>
-              <p>I'm reasearching for high performance reverse proxy and WAF solution. But original repository seems not in maintain, so I forked.</p>
-            </template>
-          </card>
-          <card>
-            <template #title>
-              <a href="https://github.com/hans00/fastWS" target="_blank">
-                Fast WS
-                <font-awesome-icon :icon="['fad', 'external-link']" class="text-gray-600 text-sm" />
-              </a>
-              <div class="inline-block ml-2">
-                <span class="badge yellow font-normal text-sm">WIP</span>
-              </div>
-            </template>
-            <template #content>
-              <p>A high-performance HTTP server.</p>
-              <p>Using uWebSockets. And the HTTP API compatible Express.js.</p>
-            </template>
-          </card>
-          <card image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/240px-WordPress_blue_logo.svg.png">
-            <template #title>
-              <a href="https://github.com/hans00/WordPress_Optimization" target="_blank">
-                WordPress Optimization
-                <font-awesome-icon :icon="['fad', 'external-link']" class="text-gray-600 text-sm" />
-              </a>
-            </template>
-            <template #content>
-              <p>Trying to optomize WordPress.</p>
-              <p></p>
-              <p>Provide two solution.</p>
-              <p> - Ngingx with PHP-FPM, Redis and MariaDB</p>
-              <p> - OpenLiteSpeed with Redis and MariaDB</p>
-            </template>
-          </card>
+          <template v-for="project in about.projects">
+            <card :image="project.image">
+              <template #title>
+                <a
+                  :href="project.link" target="_blank"
+                  class="text-gray-800"
+                >
+                  {{ project.name }}
+                  <font-awesome-icon :icon="['fad', 'external-link']" class="text-gray-600 text-sm" />
+                </a>
+                <div class="inline-block ml-2">
+                  <template v-for="badge in project.badges">
+                    <span
+                      class="badge font-normal text-sm"
+                      :class="badge.color"
+                    >
+                      {{ badge.text }}
+                    </span>
+                  </template>
+                </div>
+              </template>
+              <template #content>
+                <span class="whitespace-pre-wrap">{{ project.description.trim() }}</span>
+              </template>
+            </card>
+          </template>
         </div>
       </section>
     </section>
@@ -216,6 +172,22 @@ export default Vue.extend({
   components: {
     Card,
   },
+  data() {
+    return {
+      about: {
+        experiences: [],
+        titles: [],
+        projects: [],
+      },
+    }
+  },
+  async asyncData({ $content }) {
+    const about = await $content('about-me').fetch()
+
+    return {
+      about
+    }
+  },
 })
 </script>
 
@@ -227,7 +199,15 @@ export default Vue.extend({
   @apply text-center sticky top-2;
 }
 .basic .info .photo {
-  @apply rounded-full object-cover;
+  @apply w-full rounded-full overflow-hidden;
+  @apply shadow-md;
+}
+.basic .info .photo img {
+  @apply w-full h-auto object-cover;
+  @apply transition-transform duration-300;
+}
+.basic .info .photo:hover img {
+  @apply transform scale-125;
 }
 .basic .info .name {
   @apply text-2xl font-bold text-gray-700;
@@ -243,10 +223,10 @@ export default Vue.extend({
   @apply w-2/3 p-5;
 }
 .detail .title {
-  @apply text-gray-700 my-2;
+  @apply text-gray-700 my-2 text-lg;
 }
 .detail .data {
-  @apply pl-2;
+  @apply pl-2 text-gray-900 text-base;
 }
 
 @media (max-width: 768px) {
