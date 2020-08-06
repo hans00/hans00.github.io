@@ -9,7 +9,7 @@
         <div class="social">
           <a
             title="GitHub"
-            v-tooltip="'GitHub'"
+            class="tooltip"
             href="https://github.com/hans00/" target="_blank"
             style="color: #24292e"
           >
@@ -17,7 +17,7 @@
           </a>
           <a
             title="Facebook"
-            v-tooltip="'Facebook'"
+            class="tooltip"
             href="https://fb.hans00.me" target="_blank"
             style="color: #3b5998"
           >
@@ -25,7 +25,7 @@
           </a>
           <a
             title="Kaggle"
-            v-tooltip="'Kaggle'"
+            class="tooltip"
             href="https://www.kaggle.com/hans00" target="_blank"
             style="color: #20BEFF"
           >
@@ -43,7 +43,7 @@
       <section id="skills">
         <h3 class="title">Skills</h3>
         <div class="data">
-          <span v-tooltip="'PHP'" title="PHP" class="mr-1">
+          <span title="PHP" class="tooltip mr-1">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'php']"
@@ -51,11 +51,11 @@
             />
             <span class="sr-only">PHP</span>
           </span>
-          <span v-tooltip="'C++'" title="C++" class="mr-1">
+          <span title="C++" class="tooltip mr-1">
             <cpp-icon class="inline align-top" style="height: 4em" />
             <span class="sr-only">C++</span>
           </span>
-          <span v-tooltip="'Linux'" title="Linux" class="mr-1">
+          <span title="Linux" class="tooltip mr-1">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'linux']"
@@ -63,7 +63,7 @@
             />
             <span class="sr-only">Linux</span>
           </span>
-          <span v-tooltip="'JavaScript'" title="JavaScript" class="mr-1">
+          <span title="JavaScript" class="tooltip mr-1">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'js']"
@@ -71,7 +71,7 @@
             />
             <span class="sr-only">JavaScript</span>
           </span>
-          <span v-tooltip="'Vue.js'" title="Vue.js" class="mr-1">
+          <span title="Vue.js" class="tooltip mr-1">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'vuejs']"
@@ -79,7 +79,7 @@
             />
             <span class="sr-only">Vue.js</span>
           </span>
-          <span v-tooltip="'Python'" title="Python" class="mr-1">
+          <span title="Python" class="tooltip mr-1">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'python']"
@@ -87,7 +87,7 @@
             />
             <span class="sr-only">Python</span>
           </span>
-          <span v-tooltip="'Cyber Security'" title="Cyber Security" class="mr-1">
+          <span title="Cyber Security" class="tooltip mr-1">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fad', 'shield-check']"

@@ -58,7 +58,6 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "tailwindcss-dark-mode": "^1.1.5",
-    "v-tooltip": "^2.0.3",
     "webp-loader": "^0.6.0"
   }
 }

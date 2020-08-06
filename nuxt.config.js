@@ -34,7 +34,6 @@ export default {
    */
   plugins: [
     '~/plugins/datetime.js',
-    { src: '~/plugins/tooltip.js', ssr: false },
   ],
   /*
    ** Auto import components
