@@ -43,7 +43,7 @@
       <section id="skills">
         <h3 class="title">Skills</h3>
         <div class="data">
-          <span title="PHP" class="tooltip mr-1">
+          <span title="PHP" class="tooltip skill">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'php']"
@@ -51,11 +51,11 @@
             />
             <span class="sr-only">PHP</span>
           </span>
-          <span title="C++" class="tooltip mr-1">
-            <cpp-icon class="inline align-top" style="height: 4em" />
+          <span title="C++" class="tooltip skill">
+            <cpp-icon style="height: 4em" />
             <span class="sr-only">C++</span>
           </span>
-          <span title="Linux" class="tooltip mr-1">
+          <span title="Linux" class="tooltip skill">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'linux']"
@@ -63,7 +63,7 @@
             />
             <span class="sr-only">Linux</span>
           </span>
-          <span title="JavaScript" class="tooltip mr-1">
+          <span title="JavaScript" class="tooltip skill">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'js']"
@@ -71,7 +71,7 @@
             />
             <span class="sr-only">JavaScript</span>
           </span>
-          <span title="Vue.js" class="tooltip mr-1">
+          <span title="Vue.js" class="tooltip skill">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'vuejs']"
@@ -79,7 +79,7 @@
             />
             <span class="sr-only">Vue.js</span>
           </span>
-          <span title="Python" class="tooltip mr-1">
+          <span title="Python" class="tooltip skill">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'python']"
@@ -87,7 +87,7 @@
             />
             <span class="sr-only">Python</span>
           </span>
-          <span title="Cyber Security" class="tooltip mr-1">
+          <span title="Cyber Security" class="tooltip skill">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fad', 'shield-check']"
@@ -217,11 +217,17 @@ export default Vue.extend({
 .detail .data {
   @apply pl-2 text-gray-900 text-base;
 }
+.skill {
+  @apply inline-block mr-1 mb-1 align-top;
+}
 
 @media (max-width: 768px) {
   .basic,
   .detail {
     @apply w-full;
+  }
+  #skills .data {
+    @apply text-center;
   }
 }
 </style>
