@@ -148,7 +148,7 @@
               </template>
               <template #content>
                 <span class="whitespace-pre-wrap">{{
-                  project.description.trim()
+                  project.description | trim
                 }}</span>
               </template>
             </card>
