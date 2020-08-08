@@ -23,8 +23,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Prism from "prismjs"
-//languages
+import Prism from 'prismjs'
+// languages
 import 'prismjs/components/prism-markup-templating'
 import 'prismjs/components/prism-qml'
 import 'prismjs/components/prism-diff'
@@ -50,27 +50,18 @@ import 'prismjs/components/prism-swift'
 import 'prismjs/components/prism-python'
 import 'prismjs/components/prism-kotlin'
 import 'prismjs/components/prism-typescript'
-//plugins
-import "prismjs/plugins/line-numbers/prism-line-numbers"
-import "prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard"
+// plugins
+import 'prismjs/plugins/line-numbers/prism-line-numbers'
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'
 
 import categoryMap from '@/categories.ts'
 
 export default Vue.extend({
   name: 'Article',
-  data() {
-    return {
-      article: {
-        title: '',
-        description: '',
-        createdAt: new Date(0),
-      },
-    }
-  },
   async asyncData({ $content, params, error }) {
     try {
       const article = await $content('articles', params.slug)
-        .where({ 'category': categoryMap[params.category] })
+        .where({ category: categoryMap[params.category] })
         .fetch()
 
       return {
@@ -80,19 +71,31 @@ export default Vue.extend({
       error({ statusCode: 404, message: 'Post not found' })
     }
   },
-  head(): {[index: string]: any} {
+  data() {
+    return {
+      article: {
+        title: '',
+        description: '',
+        createdAt: new Date(0),
+      },
+    }
+  },
+  mounted() {
+    Prism.highlightAll()
+  },
+  head(): { [index: string]: any } {
     const title = `${this.article.title} | Hans' Blog`
     return {
       title,
       meta: [
         {
-          hid: "date.created",
-          name: "date.created",
+          hid: 'date.created',
+          name: 'date.created',
           content: new Date(this.article.createdAt).toISOString().slice(0, 10),
         },
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.article.description,
         },
         {
@@ -107,9 +110,6 @@ export default Vue.extend({
         },
       ],
     }
-  },
-  mounted() {
-    Prism.highlightAll()
   },
 })
 </script>

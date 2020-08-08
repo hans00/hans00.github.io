@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <template v-for="article in articles">
-      <section class="section article">
+      <section :key="article.slug" class="section article">
         <nuxt-link
           class="title"
           :to="`/blog/${article['category-slug']}/${article.slug}`"
@@ -22,8 +22,8 @@
             {{ article.updatedAt | date }}
           </span>
         </div>
-        <hr class="my-1">
-        <div class="content">{{article.description}}</div>
+        <hr class="my-1" />
+        <div class="content">{{ article.description }}</div>
         <nuxt-link
           class="more"
           :to="`/blog/${article['category-slug']}/${article.slug}`"
@@ -46,15 +46,19 @@ export default Vue.extend({
       .fetch()
 
     return {
-      articles
+      articles,
     }
   },
   head: {
     title: "Hans' Blog",
     meta: [
-      { hid: "description", name: "description", content: "List of posts" },
-      { hid: "og:title", property: "og:title", content: "Hans' Blog" },
-      { hid: "og:description", property: "og:description", content: "List of posts" },
+      { hid: 'description', name: 'description', content: 'List of posts' },
+      { hid: 'og:title', property: 'og:title', content: "Hans' Blog" },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'List of posts',
+      },
     ],
   },
 })

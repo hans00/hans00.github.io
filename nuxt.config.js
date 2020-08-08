@@ -32,9 +32,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [
-    '~/plugins/datetime.js',
-  ],
+  plugins: ['~/plugins/datetime.js'],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -75,11 +73,11 @@ export default {
       'remark-autolink-headings',
       'remark-external-links',
       'remark-footnotes',
-      'remark-github'
+      'remark-github',
     ],
     markdown: {
       prism: {
-        theme: "prism-themes/themes/prism-material-dark.css",
+        theme: 'prism-themes/themes/prism-material-dark.css',
       },
     },
   },
@@ -97,14 +95,12 @@ export default {
     families: {
       Courgette: true,
     },
-    display: 'swap'
+    display: 'swap',
   },
 
   fontawesome: {
     icons: {
-      solid: [
-        'faCircle'
-      ],
+      solid: ['faCircle'],
       brands: [
         'faFacebook',
         'faGithub',
@@ -117,23 +113,21 @@ export default {
         'faVuejs',
         'faSass',
         'faHtml5',
-      ]
+      ],
     },
     proIcons: {
-      light: [
-        'faPlus',
-      ],
+      light: ['faPlus'],
       duotone: [
         'faClock',
         'faFolders',
         'faArrowToTop',
         'faShieldCheck',
         'faExternalLink',
-      ]
-    }
+      ],
+    },
   },
 
   optimizedImages: {
-    optimizeImages: true
-  }
+    optimizeImages: true,
+  },
 }

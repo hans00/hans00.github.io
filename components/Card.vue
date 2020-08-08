@@ -5,7 +5,9 @@
     </div>
     <div class="body">
       <div class="mb-1">
-        <div class="text-gray-900 font-bold text-xl mb-2"><slot name="title"></slot></div>
+        <div class="text-gray-900 font-bold text-xl mb-2">
+          <slot name="title"></slot>
+        </div>
         <p class="text-gray-700 text-base"><slot name="content"></slot></p>
       </div>
     </div>
@@ -19,7 +21,7 @@ export default Vue.extend({
   props: {
     image: {
       type: String,
-      default: "",
+      default: '',
     },
   },
 })

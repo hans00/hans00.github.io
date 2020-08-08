@@ -10,24 +10,27 @@
           <a
             title="GitHub"
             class="tooltip"
-            href="https://github.com/hans00/" target="_blank"
-            style="color: #24292e"
+            href="https://github.com/hans00/"
+            target="_blank"
+            style="color: #24292e;"
           >
             <font-awesome-icon :icon="['fab', 'github']" size="lg" />
           </a>
           <a
             title="Facebook"
             class="tooltip"
-            href="https://fb.hans00.me" target="_blank"
-            style="color: #3b5998"
+            href="https://fb.hans00.me"
+            target="_blank"
+            style="color: #3b5998;"
           >
             <font-awesome-icon :icon="['fab', 'facebook']" size="lg" />
           </a>
           <a
             title="Kaggle"
             class="tooltip"
-            href="https://www.kaggle.com/hans00" target="_blank"
-            style="color: #20BEFF"
+            href="https://www.kaggle.com/hans00"
+            target="_blank"
+            style="color: #20beff;"
           >
             <font-awesome-icon
               :icon="['fab', 'kaggle']"
@@ -47,19 +50,19 @@
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'php']"
-              style="color: #474A8A"
+              style="color: #474a8a;"
             />
             <span class="sr-only">PHP</span>
           </span>
           <span title="C++" class="tooltip skill">
-            <cpp-icon style="height: 4em" />
+            <cpp-icon style="height: 4em;" />
             <span class="sr-only">C++</span>
           </span>
           <span title="Linux" class="tooltip skill">
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'linux']"
-              style="color: #333"
+              style="color: #333;"
             />
             <span class="sr-only">Linux</span>
           </span>
@@ -67,7 +70,7 @@
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'js']"
-              style="color: #F0DB4F"
+              style="color: #f0db4f;"
             />
             <span class="sr-only">JavaScript</span>
           </span>
@@ -75,7 +78,7 @@
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'vuejs']"
-              style="color: #41b883"
+              style="color: #41b883;"
             />
             <span class="sr-only">Vue.js</span>
           </span>
@@ -83,7 +86,7 @@
             <font-awesome-icon
               class="fa-4x"
               :icon="['fab', 'python']"
-              style="color: #306998"
+              style="color: #306998;"
             />
             <span class="sr-only">Python</span>
           </span>
@@ -91,7 +94,7 @@
             <font-awesome-icon
               class="fa-4x"
               :icon="['fad', 'shield-check']"
-              style="color: #333"
+              style="color: #333;"
             />
             <span class="sr-only">Cyber Security</span>
           </span>
@@ -100,7 +103,7 @@
       <section>
         <h3 class="title">Titles</h3>
         <div class="data">
-          <div v-for="title in about.titles">
+          <div v-for="(index, title) in about.titles" :key="`title_${index}`">
             {{ title }}
           </div>
         </div>
@@ -109,29 +112,32 @@
         <h3 class="title">Experience</h3>
         <div class="data">
           <table>
-            <tr v-for="experience in about.experiences">
-              <th class="text-right">{{ experience.year }}</th>
-              <td class="pl-2">{{ experience.content }}</td>
-            </tr>
+            <template v-for="(index, experience) in about.experiences">
+              <tr :key="`exp_${index}`">
+                <th class="text-right">{{ experience.year }}</th>
+                <td class="pl-2">{{ experience.content }}</td>
+              </tr>
+            </template>
           </table>
         </div>
       </section>
       <section id="projects">
         <h3 class="title">Projects</h3>
         <div class="data">
-          <template v-for="project in about.projects">
-            <card :image="project.image">
+          <template v-for="(index, project) in about.projects">
+            <card :key="`project_${index}`" :image="project.image">
               <template #title>
-                <a
-                  :href="project.link" target="_blank"
-                  class="text-gray-800"
-                >
+                <a :href="project.link" target="_blank" class="text-gray-800">
                   {{ project.name }}
-                  <font-awesome-icon :icon="['fad', 'external-link']" class="text-gray-600 text-sm" />
+                  <font-awesome-icon
+                    :icon="['fad', 'external-link']"
+                    class="text-gray-600 text-sm"
+                  />
                 </a>
                 <div class="inline-block ml-2">
-                  <template v-for="badge in project.badges">
+                  <template v-for="(badge_index, badge) in project.badges">
                     <span
+                      :key="`badge_${badge_index}`"
                       class="badge font-normal text-sm"
                       :class="badge.color"
                     >
@@ -141,7 +147,9 @@
                 </div>
               </template>
               <template #content>
-                <span class="whitespace-pre-wrap">{{ project.description.trim() }}</span>
+                <span class="whitespace-pre-wrap">{{
+                  project.description.trim()
+                }}</span>
               </template>
             </card>
           </template>
@@ -161,6 +169,13 @@ export default Vue.extend({
     Card,
     CppIcon,
   },
+  async asyncData({ $content }) {
+    const about = await $content('about-me').fetch()
+
+    return {
+      about,
+    }
+  },
   data() {
     return {
       about: {
@@ -168,13 +183,6 @@ export default Vue.extend({
         titles: [],
         projects: [],
       },
-    }
-  },
-  async asyncData({ $content }) {
-    const about = await $content('about-me').fetch()
-
-    return {
-      about
     }
   },
 })

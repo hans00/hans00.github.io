@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <template v-for="article in articles">
-      <section class="section article">
+      <section :key="article.slug" class="section article">
         <nuxt-link
           class="title"
           :to="`/blog/${article['category-slug']}/${article.slug}`"
@@ -22,8 +22,8 @@
             {{ article.updatedAt | date }}
           </span>
         </div>
-        <hr class="my-1">
-        <div class="content">{{article.description}}</div>
+        <hr class="my-1" />
+        <div class="content">{{ article.description }}</div>
         <nuxt-link
           class="more"
           :to="`/blog/${article['category-slug']}/${article.slug}`"
@@ -44,7 +44,7 @@ export default Vue.extend({
   async asyncData({ $content, params, error }) {
     try {
       const articles = await $content('articles')
-        .where({ 'category': categoryMap[params.category] })
+        .where({ category: categoryMap[params.category] })
         .sortBy('updatedAt', 'desc')
         .fetch()
 
@@ -55,14 +55,20 @@ export default Vue.extend({
       error({ statusCode: 404, message: 'Category not found' })
     }
   },
-  head(): {[index: string]: any} {
-    const title = `Category: ${categoryMap[this.$route.params.category]} | Hans' Blog`
+  head(): { [index: string]: any } {
+    const title = `Category: ${
+      categoryMap[this.$route.params.category]
+    } | Hans' Blog`
     return {
       title,
       meta: [
-        { hid: "description", name: "description", content: "List of posts" },
-        { hid: "og:title", property: "og:title", content: title },
-        { hid: "og:description", property: "og:description", content: "List of posts" },
+        { hid: 'description', name: 'description', content: 'List of posts' },
+        { hid: 'og:title', property: 'og:title', content: title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'List of posts',
+        },
       ],
     }
   },

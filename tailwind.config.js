@@ -22,11 +22,11 @@ module.exports = {
       xl: '1280px',
     },
     borderRadius: {
-      'none': '0',
-      'sm': '.125rem',
+      none: '0',
+      sm: '.125rem',
       default: '.25rem',
-      'lg': '.5rem',
-      'full': '9999px',
+      lg: '.5rem',
+      full: '9999px',
     },
     borderWidth: {
       default: '1px',
@@ -44,7 +44,7 @@ module.exports = {
         '4': '1rem',
         '6': '1.5rem',
         '8': '2rem',
-      }
+      },
     },
   },
   variants: {
@@ -59,7 +59,7 @@ module.exports = {
       'layouts/**/*.vue',
       'pages/**/*.vue',
       'plugins/**/*.js',
-      'nuxt.config.js'
-    ]
-  }
+      'nuxt.config.js',
+    ],
+  },
 }
