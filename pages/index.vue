@@ -103,7 +103,7 @@
       <section>
         <h3 class="title">Titles</h3>
         <div class="data">
-          <div v-for="(index, title) in about.titles" :key="`title_${index}`">
+          <div v-for="(title, index) in about.titles" :key="`title_${index}`">
             {{ title }}
           </div>
         </div>
@@ -112,7 +112,7 @@
         <h3 class="title">Experience</h3>
         <div class="data">
           <table>
-            <template v-for="(index, experience) in about.experiences">
+            <template v-for="(experience, index) in about.experiences">
               <tr :key="`exp_${index}`">
                 <th class="text-right">{{ experience.year }}</th>
                 <td class="pl-2">{{ experience.content }}</td>
@@ -124,7 +124,7 @@
       <section id="projects">
         <h3 class="title">Projects</h3>
         <div class="data">
-          <template v-for="(index, project) in about.projects">
+          <template v-for="(project, index) in about.projects">
             <card :key="`project_${index}`" :image="project.image">
               <template #title>
                 <a :href="project.link" target="_blank" class="text-gray-800">
@@ -135,7 +135,7 @@
                   />
                 </a>
                 <div class="inline-block ml-2">
-                  <template v-for="(badge_index, badge) in project.badges">
+                  <template v-for="(badge, badge_index) in project.badges">
                     <span
                       :key="`badge_${badge_index}`"
                       class="badge font-normal text-sm"
