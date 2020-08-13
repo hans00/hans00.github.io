@@ -1,7 +1,7 @@
 ---
 title: 我的 home lab
 category: server
-description: 關於我的 home lab
+description: 我的自管伺服器的架構與解決辦法
 ---
 
 # 實體機架構
@@ -16,8 +16,6 @@ graph LR
         vm-server[VM]
     end
 "></vue-mermaid>
-
-# Solution
 
 ## 路由器
 
