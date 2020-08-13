@@ -45,7 +45,7 @@
 /* NAV */
 
 .nav-item {
-  @apply w-auto block p-3 mx-0 text-gray-600 transition-colors duration-300;
+  @apply w-auto block p-3 mx-0 text-gray-600 font-bold transition-colors duration-300;
 }
 
 .nav-item:hover {
@@ -85,7 +85,7 @@
 /* Article Content */
 
 .article .title {
-  @apply text-4xl text-gray-800;
+  @apply text-4xl text-gray-800 font-bold;
 }
 .article .category {
   @apply text-gray-600 ml-1 transition-colors duration-300;
@@ -115,7 +115,7 @@
 .article .content h4,
 .article .content h5,
 .article .content h6 {
-  @apply text-gray-900 mt-3;
+  @apply text-gray-900 mt-3 mb-1 font-bold;
 }
 
 .article .content h1 {
