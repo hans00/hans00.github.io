@@ -8,7 +8,7 @@
         title="Category"
       >
         <font-awesome-icon :icon="['fad', 'folders']" />
-        {{ article.category }}
+        {{ article.category | category }}
       </nuxt-link>
       <span class="time" title="Update date">
         <font-awesome-icon :icon="['fad', 'clock']" />
@@ -54,14 +54,12 @@ import 'prismjs/components/prism-typescript'
 import 'prismjs/plugins/line-numbers/prism-line-numbers'
 import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard'
 
-import categoryMap from '@/categories.ts'
-
 export default Vue.extend({
   name: 'Article',
   async asyncData({ $content, params, error }) {
     try {
       const article = await $content('articles', params.slug)
-        .where({ category: categoryMap[params.category] })
+        .where({ category: params.category })
         .fetch()
 
       return {

@@ -32,7 +32,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/helpers.js'],
+  plugins: [
+    '@/plugins/helpers.js',
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -47,6 +49,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // global components
+    '@nuxtjs/global-components',
     // Google Fonts
     '@nuxtjs/google-fonts',
     // FA icons
