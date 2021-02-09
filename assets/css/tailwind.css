@@ -58,7 +58,7 @@
   @apply text-white bg-gray-700;
 }
 
-.nav-item.active {
+.nav-item.nuxt-link-active {
   @apply text-white bg-gray-600;
 }
 

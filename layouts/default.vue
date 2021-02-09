@@ -5,10 +5,10 @@
         <nuxt-link to="/" class="logo">Hans</nuxt-link>
       </div>
       <nav class="navbar">
-        <nuxt-link to="/" class="nav-item" exact-active-class="active">
+        <nuxt-link to="/" class="nav-item" exact>
           Home
         </nuxt-link>
-        <nuxt-link to="/blog/" class="nav-item" exact-active-class="active">
+        <nuxt-link to="/blog/" class="nav-item">
           Blog
         </nuxt-link>
       </nav>
