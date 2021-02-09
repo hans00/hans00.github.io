@@ -56,7 +56,7 @@ export default Vue.extend({
   },
   head(): { [index: string]: any } {
     const title = `Category: ${
-      this.$options.filters.category(this.$route.params.category)
+      this.$options.filters?.category(this.$route.params.category)
     } | Hans' Blog`
     return {
       title,
