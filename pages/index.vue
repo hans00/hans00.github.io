@@ -115,7 +115,7 @@
             <template v-for="(experience, index) in about.experiences">
               <tr :key="`exp_${index}`">
                 <th class="text-right">{{ experience.year }}</th>
-                <td class="pl-2">{{ experience.content }}</td>
+                <td class="pl-2"><render :content="experience.content" /></td>
               </tr>
             </template>
           </table>
@@ -161,6 +161,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import Render from '@/components/Render.ts'
 import Card from '@/components/Card.vue'
 import CppIcon from '@/components/Cpp-Icon.vue'
 
@@ -168,6 +169,7 @@ export default Vue.extend({
   components: {
     Card,
     CppIcon,
+    Render,
   },
   async asyncData({ $content }) {
     const about = await $content('about-me').fetch()

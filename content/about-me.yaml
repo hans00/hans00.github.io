@@ -19,9 +19,11 @@ experiences:
     content: Work for Leukocyte Lab Co., Ltd.
 
   - year: 2018
-    content: |
-      Found some vulnerability on 4G portable modem
-      (<a href="https://zeroday.hitcon.org/vulnerability/ZD-2018-01054" target="_blank">PoC</a>)
+    content:
+      - text: Found some vulnerability on 4G portable modem
+      - link:
+          text: (PoC)
+          url: https://zeroday.hitcon.org/vulnerability/ZD-2018-01054
 
 projects:
 

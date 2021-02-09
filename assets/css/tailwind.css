@@ -2,6 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* object render */
+
+.rendered-object a {
+  @apply mx-1;
+}
+
 /* component */
 
 .badge {
