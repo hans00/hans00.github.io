@@ -196,6 +196,7 @@ export default Vue.extend({
   @apply text-center sticky top-2;
 }
 .basic .info .photo {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   @apply w-full rounded-full overflow-hidden;
   @apply shadow-md;
 }
