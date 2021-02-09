@@ -11,9 +11,11 @@ graph LR
     isp(ISP) --- router
     router((路由器)) --- storage & vm-server & home
     home[Home Group]
-    subgraph DMZ
-        storage[儲存] == Fiber ===
-        vm-server[VM]
+    subgraph Server Group
+        storage[儲存] == Fiber === vm-server
+        subgraph DMZ
+            vm-server[VM]
+        end
     end
 "></vue-mermaid>
 
@@ -52,6 +54,16 @@ graph LR
 
 所有的應用服務都是在這台上面開 LXC 或 VM 來解決。
 
+## 分區管制
+
+### Home group
+
+供給家裡使用，設定 DHCP 與 NAT 且獨立的網段。
+
+### Server group
+
+供給伺服器使用，獨立的網段且有分區管制，僅 PVE 內。
+
 # 應用層架構
 
 <vue-mermaid code="
@@ -59,7 +71,7 @@ graph TB
     envoy -- WAF --> iis & http1 & http2
     envoy --> other-services
     rdp-proxy --> rdp & vnc
-    subgraph front-vm [前端伺服器 VM]
+    subgraph front-vm [Bastion host VM]
         envoy(envoy proxy)
         rdp-proxy(RDP proxy)
     end
@@ -79,9 +91,9 @@ graph TB
     end
 "></vue-mermaid>
 
-## 前端伺服器
+## Bastion host
 
-採用類似雲端的管理方式，由前端伺服器統一對外。
+採用類似雲端的管理方式，由 bastion host 統一對外。
 
 ### envoy proxy
 
