@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import categoryMap from '@/categories.ts'
+import categoryMap from '@/assets/categories.ts'
 
 Vue.filter('date', (val) => new Date(val).toLocaleDateString())
 

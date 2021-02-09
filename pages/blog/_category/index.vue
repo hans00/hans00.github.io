@@ -37,7 +37,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import categoryMap from '@/categories.ts'
 
 export default Vue.extend({
   name: 'Category',
@@ -57,7 +56,7 @@ export default Vue.extend({
   },
   head(): { [index: string]: any } {
     const title = `Category: ${
-      categoryMap[this.$route.params.category]
+      this.$options.filters.category(this.$route.params.category)
     } | Hans' Blog`
     return {
       title,

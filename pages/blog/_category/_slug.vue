@@ -4,8 +4,8 @@
     <div>
       <nuxt-link
         class="category"
-        :to="`/blog/${article['category-slug']}/`"
-        title="Category"
+        :to="`/blog/${article.category}/`"
+        :title="`Category: ${$options.filters.category(article.category)}`"
       >
         <font-awesome-icon :icon="['fad', 'folders']" />
         {{ article.category | category }}
