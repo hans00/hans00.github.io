@@ -213,6 +213,10 @@ li > ol {
   @apply mt-0 rounded-t-none;
 }
 
+.article .mermaid {
+  @apply overflow-x-auto;
+}
+
 pre[class*="language-"] {
   @apply rounded-t rounded-b;
 }
