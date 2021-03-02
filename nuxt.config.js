@@ -65,6 +65,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    'nuxt-lazy-load',
   ],
   /*
    ** Content module configuration
