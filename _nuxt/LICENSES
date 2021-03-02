@@ -1,3 +1,16 @@
+/*!
+  * vue-router v3.5.1
+  * (c) 2021 Evan You
+  * @license MIT
+  */
+
+/*!
+ * Vue.js v2.6.12
+ * (c) 2014-2020 Evan You
+ * Released under the MIT License.
+ */
+
+
 /*
  *          __        ___
  *    _____/ /___  __/ (_)____
@@ -12,37 +25,6 @@
 /*!
    * Wait for document loaded before starting the execution
    */
-
-/*!
-  * vue-router v3.4.3
-  * (c) 2020 Evan You
-  * @license MIT
-  */
-
-/*!
- * Vue.js v2.6.11
- * (c) 2014-2019 Evan You
- * Released under the MIT License.
- */
-
-/*!
- * clipboard.js v2.0.6
- * https://clipboardjs.com/
- * 
- * Licensed MIT © Zeno Rocha
- */
-
-/*!
- * vue-client-only v2.0.0
- * (c) 2019-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
-
-/*!
- * vue-no-ssr v1.1.1
- * (c) 2018-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
 
 /*! ../../config */
 
@@ -59,6 +41,8 @@
 /*! ../config */
 
 /*! ../createLabel */
+
+/*! ../diagrams/class/svgDraw */
 
 /*! ../intersect/index.js */
 
@@ -290,7 +274,7 @@
 
 /*! entity-decode/browser */
 
-/*! exports provided: LEVELS, logger, setLogLevel */
+/*! exports provided: LEVELS, log, setLogLevel */
 
 /*! exports provided: addClasses, addRelations, setConf, drawOld, draw, default */
 
@@ -302,19 +286,19 @@
 
 /*! exports provided: clear, insertEdgeLabel, positionEdgeLabel, intersection, insertEdge */
 
-/*! exports provided: clusterDb, clear, extractDecendants, validate, findNonClusterChild, adjustClustersAndEdges, extractor */
+/*! exports provided: clusterDb, clear, extractDecendants, validate, findNonClusterChild, adjustClustersAndEdges, extractor, sortNodesByHierarchy */
 
 /*! exports provided: default */
 
-/*! exports provided: defaultConfig, updateCurrentConfig, setSiteConfig, updateSiteConfig, getSiteConfig, setConfig, getConfig, sanitize, addDirective, reset */
+/*! exports provided: defaultConfig, updateCurrentConfig, setSiteConfig, saveConfigFromInitilize, updateSiteConfig, getSiteConfig, setConfig, getConfig, sanitize, addDirective, reset */
 
-/*! exports provided: detectInit, detectDirective, detectType, isSubstringInArray, interpolateToCurve, formatUrl, runFunc, getStylesFromArray, generateId, random, assignWithDepth, getTextObj, drawSimpleText, wrapLabel, calculateTextHeight, calculateTextWidth, calculateTextDimensions, default */
+/*! exports provided: detectInit, detectDirective, detectType, isSubstringInArray, interpolateToCurve, formatUrl, runFunc, getStylesFromArray, generateId, random, assignWithDepth, getTextObj, drawSimpleText, wrapLabel, calculateTextHeight, calculateTextWidth, calculateTextDimensions, calculateSvgSizeAttrs, configureSvgSize, initIdGeneratior, default */
 
 /*! exports provided: drawEdge, drawClass, parseMember, default */
 
 /*! exports provided: drawRect, drawFace, drawCircle, drawText, drawLabel, drawSection, drawTask, drawBackgroundRect, getTextObj, getNoteRect, default */
 
-/*! exports provided: drawRect, drawText, drawLabel, drawActor, anchorElement, drawActivation, drawLoop, drawBackgroundRect, insertArrowHead, insertSequenceNumber, insertArrowCrossHead, getTextObj, getNoteRect, default */
+/*! exports provided: drawRect, drawText, drawLabel, drawActor, anchorElement, drawActivation, drawLoop, drawBackgroundRect, insertArrowHead, insertArrowFilledHead, insertSequenceNumber, insertArrowCrossHead, getTextObj, getNoteRect, default */
 
 /*! exports provided: drawStartState, drawDivider, drawSimpleState, drawDescrState, addTitleAndBox, drawText, drawNote, drawState, drawEdge */
 
@@ -340,13 +324,13 @@
 
 /*! exports provided: parseDirective, addState, clear, getState, getStates, logDocuments, getRelations, addRelation, cleanupLabel, lineType, relationType, default */
 
-/*! exports provided: parseDirective, addVertex, addSingleLink, addLink, updateLinkInterpolate, updateLink, addClass, setDirection, setClass, setLink, getTooltip, setClickEvent, bindFunctions, getDirection, getVertices, getEdges, getClasses, clear, defaultStyle, addSubGraph, getDepthFirstPos, indexNodes, getSubGraphs, firstGraph, default */
-
 /*! exports provided: parseDirective, clear, setAxisFormat, getAxisFormat, setTodayMarker, getTodayMarker, setDateFormat, enableInclusiveEndDates, endDatesAreInclusive, getDateFormat, setExcludes, getExcludes, setTitle, getTitle, addSection, getSections, getTasks, addTask, findTaskById, addTaskOrg, setLink, setClass, setClickEvent, bindFunctions, default */
 
 /*! exports provided: parseDirective, clear, setTitle, getTitle, addSection, getSections, getTasks, addTask, addTaskOrg, default */
 
 /*! exports provided: parseDirective, default */
+
+/*! exports provided: parseDirective, lookUpDomId, addVertex, addSingleLink, addLink, updateLinkInterpolate, updateLink, addClass, setDirection, setClass, setLink, getTooltip, setClickEvent, bindFunctions, getDirection, getVertices, getEdges, getClasses, clear, setGen, defaultStyle, addSubGraph, getDepthFirstPos, indexNodes, getSubGraphs, firstGraph, default */
 
 /*! exports provided: render */
 
@@ -789,4 +773,34 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
+ */
+
+
+/*!
+ * clipboard.js v2.0.6
+ * https://clipboardjs.com/
+ * 
+ * Licensed MIT © Zeno Rocha
+ */
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
+ */
+
+
+/*!
+ * vue-client-only v2.0.0
+ * (c) 2019-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * vue-no-ssr v1.1.1
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
  */
