@@ -1,13 +1,50 @@
 /*!
-  * vue-router v3.5.1
+ * vue-client-only v0.0.0-semantic-release
+ * (c) 2021-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * vue-no-ssr v1.1.1
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/**
+ * v-lazy-image v1.4.0
+ * (c) 2020 Alex Jover Morales <alexjovermorales@gmail.com>
+ * @license MIT
+ */
+
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+
+/*!
+  * vue-router v3.5.2
   * (c) 2021 Evan You
   * @license MIT
   */
 
 /*!
- * Vue.js v2.6.12
- * (c) 2014-2020 Evan You
+ * Vue.js v2.6.14
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
+ */
+
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ *
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @author Lea Verou <https://lea.verou.me>
+ * @namespace
+ * @public
  */
 
 
@@ -30,6 +67,8 @@
 
 /*! ../../dagre-wrapper/index.js */
 
+/*! ../../diagrams/common/common */
+
 /*! ../../logger */
 
 /*! ../../mermaidAPI */
@@ -43,6 +82,8 @@
 /*! ../createLabel */
 
 /*! ../diagrams/class/svgDraw */
+
+/*! ../diagrams/common/common */
 
 /*! ../intersect/index.js */
 
@@ -129,6 +170,14 @@
 /*! ./diagrams/pie/pieRenderer */
 
 /*! ./diagrams/pie/styles */
+
+/*! ./diagrams/requirement/parser/requirementDiagram */
+
+/*! ./diagrams/requirement/requirementDb */
+
+/*! ./diagrams/requirement/requirementRenderer */
+
+/*! ./diagrams/requirement/styles */
 
 /*! ./diagrams/sequence/parser/sequenceDiagram */
 
@@ -222,11 +271,17 @@
 
 /*! ./parser/pie */
 
+/*! ./parser/requirementDiagram */
+
 /*! ./parser/sequenceDiagram */
 
 /*! ./parser/stateDiagram */
 
 /*! ./pieDb */
+
+/*! ./requirementDb */
+
+/*! ./requirementMarkers */
 
 /*! ./sequenceDb */
 
@@ -294,6 +349,8 @@
 
 /*! exports provided: detectInit, detectDirective, detectType, isSubstringInArray, interpolateToCurve, formatUrl, runFunc, getStylesFromArray, generateId, random, assignWithDepth, getTextObj, drawSimpleText, wrapLabel, calculateTextHeight, calculateTextWidth, calculateTextDimensions, calculateSvgSizeAttrs, configureSvgSize, initIdGeneratior, default */
 
+/*! exports provided: draw, default */
+
 /*! exports provided: drawEdge, drawClass, parseMember, default */
 
 /*! exports provided: drawRect, drawFace, drawCircle, drawText, drawLabel, drawSection, drawTask, drawBackgroundRect, getTextObj, getNoteRect, default */
@@ -304,7 +361,7 @@
 
 /*! exports provided: encodeEntities, decodeEntities, default */
 
-/*! exports provided: getRows, removeScript, sanitizeText, lineBreakRegex, hasBreaks, splitBreaks, default */
+/*! exports provided: getRows, removeScript, sanitizeText, lineBreakRegex, hasBreaks, splitBreaks, evaluate, default */
 
 /*! exports provided: getThemeVariables */
 
@@ -324,7 +381,7 @@
 
 /*! exports provided: parseDirective, addState, clear, getState, getStates, logDocuments, getRelations, addRelation, cleanupLabel, lineType, relationType, default */
 
-/*! exports provided: parseDirective, clear, setAxisFormat, getAxisFormat, setTodayMarker, getTodayMarker, setDateFormat, enableInclusiveEndDates, endDatesAreInclusive, getDateFormat, setExcludes, getExcludes, setTitle, getTitle, addSection, getSections, getTasks, addTask, findTaskById, addTaskOrg, setLink, setClass, setClickEvent, bindFunctions, default */
+/*! exports provided: parseDirective, clear, setAxisFormat, getAxisFormat, setTodayMarker, getTodayMarker, setDateFormat, enableInclusiveEndDates, endDatesAreInclusive, enableTopAxis, topAxisEnabled, getDateFormat, setExcludes, getExcludes, setTitle, getTitle, addSection, getSections, getTasks, addTask, findTaskById, addTaskOrg, setLink, setClass, setClickEvent, bindFunctions, default */
 
 /*! exports provided: parseDirective, clear, setTitle, getTitle, addSection, getSections, getTasks, addTask, addTaskOrg, default */
 
@@ -341,6 +398,8 @@
 /*! exports provided: setConf, draw, bounds, drawTasks, default */
 
 /*! exports provided: setConf, draw, default */
+
+/*! exports provided: setConf, drawReqs, drawElements, draw, default */
 
 /*! exports provided: setConf, getClasses, draw, default */
 
@@ -612,6 +671,10 @@
   !*** ./src/diagrams/pie/parser/pie.jison ***!
   \*******************************************/
 
+/*!********************************************!*\
+  !*** ./src/diagrams/requirement/styles.js ***!
+  \********************************************/
+
 /*!*********************************************!*\
   !*** ./src/diagrams/class/classRenderer.js ***!
   \*********************************************/
@@ -697,6 +760,10 @@
   \***************************************************/
 
 /*!***************************************************!*\
+  !*** ./src/diagrams/requirement/requirementDb.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
   !*** ./src/diagrams/sequence/sequenceRenderer.js ***!
   \***************************************************/
 
@@ -733,11 +800,19 @@
   \*******************************************************/
 
 /*!********************************************************!*\
+  !*** ./src/diagrams/requirement/requirementMarkers.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
   !*** ./src/diagrams/user-journey/parser/journey.jison ***!
   \********************************************************/
 
 /*!*********************************************************!*\
   !*** ./src/dagre-wrapper/intersect/intersect-circle.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./src/diagrams/requirement/requirementRenderer.js ***!
   \*********************************************************/
 
 /*!**********************************************************!*\
@@ -751,6 +826,10 @@
 /*!************************************************************!*\
   !*** ./src/diagrams/sequence/parser/sequenceDiagram.jison ***!
   \************************************************************/
+
+/*!******************************************************************!*\
+  !*** ./src/diagrams/requirement/parser/requirementDiagram.jison ***!
+  \******************************************************************/
 
 /**
  * @license
@@ -773,34 +852,4 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */
-
-
-/*!
- * clipboard.js v2.0.6
- * https://clipboardjs.com/
- * 
- * Licensed MIT © Zeno Rocha
- */
-
-/**
- * Prism: Lightweight, robust, elegant syntax highlighting
- *
- * @license MIT <https://opensource.org/licenses/MIT>
- * @author Lea Verou <https://lea.verou.me>
- * @namespace
- * @public
- */
-
-
-/*!
- * vue-client-only v2.0.0
- * (c) 2019-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
- */
-
-/*!
- * vue-no-ssr v1.1.1
- * (c) 2018-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
  */
