@@ -34,6 +34,7 @@ export default {
    */
   plugins: [
     '@/plugins/helpers.js',
+    '@/plugins/lazy-load.js',
   ],
   /*
    ** Auto import components
@@ -56,7 +57,7 @@ export default {
     // FA icons
     '@nuxtjs/fontawesome',
     // image optimize
-    '@aceforth/nuxt-optimized-images',
+    '@nuxt/image',
   ],
   /*
    ** Nuxt.js modules
@@ -65,7 +66,6 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
-    'nuxt-lazy-load',
   ],
   /*
    ** Content module configuration
@@ -132,7 +132,5 @@ export default {
     },
   },
 
-  optimizedImages: {
-    optimizeImages: true,
-  },
+  image: {},
 }

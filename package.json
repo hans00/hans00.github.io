@@ -19,16 +19,16 @@
     "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/pwa": "^3.3.5",
     "nuxt": "^2.15.7",
-    "nuxt-lazy-load": "^1.2.6"
+    "v-lazy-image": "^1.4.0"
   },
   "devDependencies": {
-    "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/pro-duotone-svg-icons": "^5.15.3",
     "@fortawesome/pro-light-svg-icons": "^5.15.3",
     "@fortawesome/pro-regular-svg-icons": "^5.15.3",
+    "@nuxt/image": "^0.5.0",
     "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config": "^3.1.0",
@@ -48,22 +48,16 @@
     "eslint-plugin-prettier": "^3.4.0",
     "fibers": "^5.0.0",
     "husky": "^4.3.8",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^9.0.0",
     "mermaid": "^8.11.0",
     "prettier": "^2.3.2",
     "prism-themes": "^1.7.0",
     "prismjs": "^1.24.1",
-    "responsive-loader": "^2.3.0",
     "sass": "^1.35.1",
     "sass-loader": "^9.0.3",
     "sharp": "^0.25.4",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "tailwindcss-dark-mode": "^1.1.7",
-    "webp-loader": "^0.6.0"
+    "tailwindcss-dark-mode": "^1.1.7"
   }
 }

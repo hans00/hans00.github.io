@@ -3,7 +3,11 @@
     <section class="basic">
       <div class="info">
         <div class="photo">
-          <img src="@/assets/photo.jpg" alt="My Photo" />
+          <v-lazy-image
+            :src="$img('/photo.jpg', { height: 520 })"
+            :src-placeholder="$img('/photo.jpg', { height: 50 })"
+            loading="lazy"
+          ></v-lazy-image>
         </div>
         <h2 class="name">Hans</h2>
         <div class="social">

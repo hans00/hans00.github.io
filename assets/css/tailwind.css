@@ -309,3 +309,12 @@ pre[class*="language-"].line-numbers > code {
   visibility: visible;
   opacity: 1;
 }
+
+/* lazy blur */
+.v-lazy-image {
+  filter: blur(30px);
+  transition: filter 1.3s;
+}
+.v-lazy-image-loaded {
+  filter: blur(0);
+}

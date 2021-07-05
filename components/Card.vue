@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div v-if="image" class="image">
-      <img :src="image" />
+      <v-lazy-image :src="image" />
     </div>
     <div class="body">
       <div class="mb-1">
