@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 /*
  ** TailwindCSS Configuration File
  **
@@ -21,22 +23,23 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
     },
-    borderRadius: {
-      none: '0',
-      sm: '.125rem',
-      default: '.25rem',
-      lg: '.5rem',
-      full: '9999px',
-    },
-    borderWidth: {
-      default: '1px',
-      '0': '0',
-      '2': '2px',
-      '4': '4px',
-    },
     extend: {
+      borderRadius: {
+        none: '0',
+        sm: '.125rem',
+        default: '.25rem',
+        lg: '.5rem',
+        full: '9999px',
+      },
+      borderWidth: {
+        defult: '1px',
+        '0': '0',
+        '2': '2px',
+        '4': '4px',
+      },
       colors: {
-        cyan: '#9cdbff',
+        cyan: colors.cyan,
+        orange: colors.orange,
       },
       inset: {
         '0': '0',
