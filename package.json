@@ -15,7 +15,7 @@
     "pre-commit": "npm run lint"
   },
   "dependencies": {
-    "@nuxt/content": "^1.14.0",
+    "@nuxt/content": "^2.5.2",
     "@nuxt/typescript-runtime": "^1.0.0",
     "@nuxtjs/pwa": "^3.3.5",
     "nuxt": "^2.15.7",
