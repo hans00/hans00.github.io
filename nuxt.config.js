@@ -1,11 +1,7 @@
-import Fiber from 'fibers'
 import Sass from 'sass'
 
 const SassConfig = {
   implementation: Sass,
-  sassOptions: {
-    fiber: Fiber,
-  },
 }
 
 export default {

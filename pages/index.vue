@@ -165,7 +165,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Render from '@/components/Render.ts'
+import Render from '@/components/Render'
 import Card from '@/components/Card.vue'
 import CppIcon from '@/components/Cpp-Icon.vue'
 

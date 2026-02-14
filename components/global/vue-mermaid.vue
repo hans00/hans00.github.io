@@ -5,7 +5,11 @@
 <script lang="ts">
 import Vue from "vue"
 
-const mermaid = process.client && require("mermaid")
+let mermaid
+if (process.client) {
+  mermaid = require("mermaid")
+  mermaid = mermaid.default || mermaid
+}
 
 export default Vue.extend({
   name: "VueMermaid",
