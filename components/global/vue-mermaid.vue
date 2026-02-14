@@ -4,8 +4,9 @@
 
 <script lang="ts">
 import Vue from "vue"
+import type Mermaid from "mermaid"
 
-let mermaid
+let mermaid: Mermaid | undefined
 if (process.client) {
   mermaid = require("mermaid")
   mermaid = mermaid.default || mermaid
@@ -44,7 +45,7 @@ export default Vue.extend({
   },
   methods: {
     init() {
-      mermaid.initialize(Object.assign(this.defaultConfig, this.config))
+      mermaid?.initialize(Object.assign(this.defaultConfig, this.config))
     },
     load() {
       const container = this.$el as HTMLElement
@@ -59,7 +60,7 @@ export default Vue.extend({
 
         }
         try {
-          mermaid.init(this.code, container)
+          mermaid?.init(this.code, container)
         } catch (error) {
           if (this.stopOnError) {
             throw error
