@@ -4,12 +4,11 @@
 
 <script lang="ts">
 import Vue from "vue"
-import type Mermaid from "mermaid"
+import type { Mermaid } from "mermaid"
 
 let mermaid: Mermaid | undefined
 if (process.client) {
   mermaid = require("mermaid")
-  mermaid = mermaid.default || mermaid
 }
 
 export default Vue.extend({
