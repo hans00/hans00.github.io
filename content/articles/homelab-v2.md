@@ -1,7 +1,7 @@
 ---
 title: HomeLab v2.0 架構大遷移：告別存算分離，擁抱 Ubuntu + ZFS + AI Copilot 全能單機
 category: server
-date: 2024-02-14
+date: 2026-02-14
 description: 告別存算分離，擁抱 Ubuntu + ZFS + Cockpit + AI Copilot 的全能單機 HomeLab v2.0 架構分享。
 ---
 
