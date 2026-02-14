@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div v-if="image" class="image">
-      <v-lazy-image :src="image" />
+      <NuxtImg :src="image" />
     </div>
     <div class="body">
       <div class="mb-1">
@@ -14,24 +14,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    image: {
-      type: String,
-      default: '',
-    },
-  },
-})
+<script setup lang="ts">
+defineProps<{
+  image?: string
+}>()
 </script>
 
-<style>
+<style scoped>
 .card {
   @apply max-w-sm w-full mb-2;
 }
-@screen lg {
+@media (min-width: 1024px) {
   .card {
     @apply max-w-full flex;
   }
@@ -42,7 +35,7 @@ export default Vue.extend({
   @apply rounded-t text-center overflow-hidden;
   @apply border border-b-0 border-gray-400;
 }
-@screen lg {
+@media (min-width: 1024px) {
   .card .image {
     @apply h-auto w-48;
     @apply rounded-t-none rounded-l;
@@ -65,7 +58,7 @@ export default Vue.extend({
 .card .image + .body {
   @apply rounded-t-none border-t-0;
 }
-@screen lg {
+@media (min-width: 1024px) {
   .card .image + .body {
     @apply border-l-0 rounded-l-none rounded-t border-t;
   }

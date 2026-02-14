@@ -3,11 +3,11 @@
     <section class="basic">
       <div class="info">
         <div class="photo">
-          <v-lazy-image
-            :src="$img('/photo.jpg', { height: 520 })"
-            :src-placeholder="$img('/photo.jpg', { height: 50 })"
+          <img
+            src="/photo.jpg"
+            alt="Hans"
             loading="lazy"
-          ></v-lazy-image>
+          />
         </div>
         <h2 class="name">Hans</h2>
         <div class="social">
@@ -59,7 +59,7 @@
             <span class="sr-only">PHP</span>
           </span>
           <span title="C++" class="tooltip skill">
-            <cpp-icon style="height: 4em;" />
+            <CppIcon style="height: 4em;" />
             <span class="sr-only">C++</span>
           </span>
           <span title="Linux" class="tooltip skill">
@@ -107,7 +107,7 @@
       <section>
         <h3 class="title">Titles</h3>
         <div class="data">
-          <div v-for="(title, index) in about.titles" :key="`title_${index}`">
+          <div v-for="(title, index) in data?.titles" :key="`title_${index}`">
             {{ title }}
           </div>
         </div>
@@ -116,10 +116,10 @@
         <h3 class="title">Experience</h3>
         <div class="data">
           <table>
-            <template v-for="(experience, index) in about.experiences">
-              <tr :key="`exp_${index}`">
+            <template v-for="(experience, index) in data?.experiences" :key="`exp_${index}`">
+              <tr>
                 <th class="text-right">{{ experience.year }}</th>
-                <td class="pl-2"><render :content="experience.content" /></td>
+                <td class="pl-2"><Render :content="experience.content" /></td>
               </tr>
             </template>
           </table>
@@ -128,8 +128,8 @@
       <section id="projects">
         <h3 class="title">Projects</h3>
         <div class="data">
-          <template v-for="(project, index) in about.projects">
-            <card :key="`project_${index}`" :image="project.image">
+          <template v-for="(project, index) in data?.projects" :key="`project_${index}`">
+            <Card :image="project.image">
               <template #title>
                 <a :href="project.link" target="_blank" class="text-gray-800">
                   {{ project.name }}
@@ -139,9 +139,8 @@
                   />
                 </a>
                 <div class="inline-block ml-2">
-                  <template v-for="(badge, badge_index) in project.badges">
+                  <template v-for="(badge, badge_index) in project.badges" :key="`badge_${badge_index}`">
                     <span
-                      :key="`badge_${badge_index}`"
                       class="badge font-normal text-sm"
                       :class="badge.color"
                     >
@@ -152,10 +151,10 @@
               </template>
               <template #content>
                 <span class="whitespace-pre-wrap">{{
-                  project.description | trim
+                  project.description
                 }}</span>
               </template>
-            </card>
+            </Card>
           </template>
         </div>
       </section>
@@ -163,35 +162,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Render from '@/components/Render'
-import Card from '@/components/Card.vue'
-import CppIcon from '@/components/Cpp-Icon.vue'
-
-export default Vue.extend({
-  components: {
-    Card,
-    CppIcon,
-    Render,
-  },
-  async asyncData({ $content }) {
-    const about = await $content('about-me').fetch()
-
-    return {
-      about,
-    }
-  },
-  data() {
-    return {
-      about: {
-        experiences: [],
-        titles: [],
-        projects: [],
-      },
-    }
-  },
-})
+<script setup lang="ts">
+const { data: aboutData } = await useAsyncData('about-me', () => queryContent('/about-me').findOne())
+const data = aboutData
 </script>
 
 <style scoped>
@@ -202,13 +175,10 @@ export default Vue.extend({
   @apply text-center sticky top-2;
 }
 .basic .info .photo {
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
-  @apply w-full rounded-full overflow-hidden;
-  @apply shadow-md;
+  @apply w-full rounded-full overflow-hidden shadow-md;
 }
 .basic .info .photo img {
-  @apply w-full h-auto object-cover;
-  @apply transition-transform duration-300;
+  @apply w-full h-auto object-cover transition-transform duration-300;
 }
 .basic .info .photo:hover img {
   @apply transform scale-125;

@@ -1,0 +1,76 @@
+{
+  "titles": [
+    "Member of 社團法人臺灣校園資訊安全推廣暨駭客培育協會"
+  ],
+  "experiences": [
+    {
+      "year": 2013,
+      "content": "Won the Taiwan local LEGO WRO contest."
+    },
+    {
+      "year": 2014,
+      "content": "Manage shared hosting server."
+    },
+    {
+      "year": 2015,
+      "content": "Work for RemoteSpark Inc."
+    },
+    {
+      "year": 2016,
+      "content": "Won the self-drive car contest. (Arduino)"
+    },
+    {
+      "year": 2018,
+      "content": "Work for Leukocyte Lab Co., Ltd."
+    },
+    {
+      "year": 2018,
+      "content": [
+        {
+          "text": "Found some vulnerability on 4G portable modem"
+        },
+        {
+          "link": {
+            "text": "(PoC)",
+            "url": "https://zeroday.hitcon.org/vulnerability/ZD-2018-01054"
+          }
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "My LHU",
+      "link": "https://github.com/hans00/MyLHU",
+      "badges": [
+        {
+          "text": "Not In Maintain",
+          "color": "orange"
+        }
+      ],
+      "description": "A tool for LHU students.\nUsing Node.js and Vue.js. And user data only in session."
+    },
+    {
+      "name": "envoy ModSecurity",
+      "link": "https://github.com/hans00/ModSecurity-envoy",
+      "description": "ModSecurity filter for envoy proxy.\nI'm reasearching for high performance reverse proxy and WAF solution.\nBut original repository seems not in maintain, so I forked."
+    },
+    {
+      "name": "Fast WS",
+      "link": "https://github.com/hans00/fastWS",
+      "badges": [
+        {
+          "text": "WIP",
+          "color": "yellow"
+        }
+      ],
+      "description": "A high-performance HTTP server.\nUsing uWebSockets. And the HTTP API compatible Express.js."
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/240px-WordPress_blue_logo.svg.png",
+      "name": "WordPress Optimization",
+      "link": "https://github.com/hans00/WordPress_Optimization",
+      "description": "Trying to optomize WordPress.\nProvide two solution.\n- Ngingx with PHP-FPM, Redis and MariaDB\n- OpenLiteSpeed with Redis and MariaDB"
+    }
+  ]
+}

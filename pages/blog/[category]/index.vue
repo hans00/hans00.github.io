@@ -36,8 +36,12 @@
 </template>
 
 <script setup lang="ts">
-const { data: articles } = await useAsyncData('articles', () => 
+const route = useRoute()
+const category = route.params.category as string
+
+const { data: articles } = await useAsyncData(`category-${category}`, () => 
   queryContent('articles')
+    .where({ category: { $eq: category } })
     .sort({ date: -1 })
     .find()
 )
@@ -49,14 +53,14 @@ const formatCategory = (cat: string) => {
 
 const formatDate = (date: string) => {
   if (!date) return ''
-  return new Date(date).toLocaleDateString()
+  return new Date(date).toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')
 }
 
 useHead({
-  title: "Hans' Blog",
+  title: `Category: ${formatCategory(category)} | Hans' Blog`,
   meta: [
     { name: 'description', content: 'List of posts' },
-    { property: 'og:title', content: "Hans' Blog" },
+    { property: 'og:title', content: `Category: ${formatCategory(category)} | Hans' Blog` },
     { property: 'og:description', content: 'List of posts' },
   ],
 })

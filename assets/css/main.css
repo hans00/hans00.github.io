@@ -37,9 +37,10 @@
 /* Go Top */
 
 .go-to-top {
-  @apply fixed bottom-0 right-0 block;
+  @apply fixed bottom-0 right-0;
+  @apply flex items-center justify-center;
   @apply rounded-full bg-gray-600 bg-opacity-75 text-white cursor-pointer;
-  @apply text-3xl w-12 h-12 p-3 leading-none align-middle text-center;
+  @apply text-3xl w-12 h-12;
   @apply invisible opacity-0;
   transition: visibility .3s, opacity .3s, right .3s, bottom .5s;
 }

@@ -1,6 +1,7 @@
 ---
 title: 我的 home lab
 category: server
+date: 2022-01-01
 description: 我的自管伺服器的架構與解決辦法
 ---
 
