@@ -59,7 +59,9 @@ export default Vue.extend({
 
         }
         try {
-          mermaid?.init(this.code, container)
+          if (mermaid) {
+            mermaid.init(container)
+          }
         } catch (error) {
           if (this.stopOnError) {
             throw error
