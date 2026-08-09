@@ -43,6 +43,15 @@
               size="lg"
             />
           </a>
+          <a
+            title="Hugging Face"
+            class="tooltip"
+            href="https://huggingface.co/hans00"
+            target="_blank"
+            style="color: #ffbd00;"
+          >
+            <font-awesome-icon :icon="['fab', 'huggingface']" size="lg" />
+          </a>
         </div>
       </div>
     </section>

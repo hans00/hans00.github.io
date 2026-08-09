@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
   faFacebook,
   faGithub,
+  faHuggingFace,
   faKaggle,
   faPhp,
   faPython,
@@ -29,6 +30,7 @@ config.autoAddCss = false
 library.add(
   faFacebook,
   faGithub,
+  faHuggingFace,
   faKaggle,
   faPhp,
   faPython,

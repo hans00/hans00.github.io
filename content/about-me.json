@@ -36,9 +36,33 @@
           }
         }
       ]
+    },
+    {
+      "year": "2020 Q4",
+      "content": "Joined BRICKS."
     }
   ],
   "projects": [
+    {
+      "name": "phonemize",
+      "link": "https://github.com/hans00/phonemize",
+      "description": "A pure JavaScript phonemizer with rule-based grapheme-to-phoneme prediction."
+    },
+    {
+      "name": "cockpit-copilot-agent",
+      "link": "https://github.com/hans00/cockpit-copilot-agent",
+      "description": "An AI Copilot Agent for Cockpit that helps manage Linux systems."
+    },
+    {
+      "name": "transformers.js for React Native",
+      "link": "https://github.com/mybigday/transformers.js-rn",
+      "description": "React Native support for running 🤗 Transformers.js models on device."
+    },
+    {
+      "name": "faster-qs",
+      "link": "https://github.com/hans00/faster-qs",
+      "description": "A fast query-string parser with broad qs-compatible features."
+    },
     {
       "name": "My LHU",
       "link": "https://github.com/hans00/MyLHU",
