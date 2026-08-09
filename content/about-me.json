@@ -54,9 +54,9 @@
       "description": "An AI Copilot Agent for Cockpit that helps manage Linux systems."
     },
     {
-      "name": "transformers.js for React Native",
-      "link": "https://github.com/mybigday/transformers.js-rn",
-      "description": "React Native support for running 🤗 Transformers.js models on device."
+      "name": "React Native Transformers Example",
+      "link": "https://github.com/hans00/react-native-transformers-example",
+      "description": "An example project for running 🤗 Transformers.js on React Native."
     },
     {
       "name": "faster-qs",
